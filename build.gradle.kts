@@ -14,7 +14,7 @@ java {
 val repoUser = project.properties["repoUser"] as String
 val repoPassword = project.properties["repoPassword"] as String
 
-val mcVersion = "1.20.2"
+val mcVersion = "1.20.4"
 val kotlinVersion = kotlin.coreLibrariesVersion
 
 repositories {
