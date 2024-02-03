@@ -31,7 +31,7 @@ override fun onTabComplete(sender: CommandSender, command: Command, label: Strin
 
 interface ChildCommand {
     val commandName: String
-    val args: ArrayList<String>
+    var args: ArrayList<String>
 
     fun onCommand(): Boolean
 }
