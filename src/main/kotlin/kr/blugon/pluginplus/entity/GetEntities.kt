@@ -25,14 +25,14 @@ fun entities(vararg entityType: EntityType): List<Entity> {
 
 fun entities(scoreboardTags: List<String>, tagsType: TagsType = TagsType.HAVE_ALL): List<Entity> {
     val entities = ArrayList<Entity>()
-    entities@for(entity in entities()) {
+    Entities@for(entity in entities()) {
         for(tag in scoreboardTags) {
             when(tagsType) {
-                TagsType.HAVE_ALL -> if(!entity.scoreboardTags.contains(tag)) continue@entities
+                TagsType.HAVE_ALL -> if(!entity.scoreboardTags.contains(tag)) continue@Entities
                 TagsType.HAVE_ONE -> {
                     if(entity.scoreboardTags.contains(tag)) {
                         entities.add(entity)
-                        continue@entities
+                        continue@Entities
                     }
                 }
             }
