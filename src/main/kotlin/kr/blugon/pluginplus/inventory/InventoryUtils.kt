@@ -21,7 +21,10 @@ fun Inventory.removeItem(material: Material, amount: Int, ignoreLack: Boolean = 
     for(i in 0 until this.size) {
         val item = this.getItem(i)
         if(item?.type != material) continue
-        if(count <= item.amount) item.amount-=count
+        if(count <= item.amount) {
+            item.amount-=count
+            break
+        }
         else {
             count-=item.amount
             item.amount = 0
