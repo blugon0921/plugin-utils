@@ -1,4 +1,4 @@
-package kr.blugon.pluginplus.etc
+package kr.blugon.pluginutils.etc
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.Component.text

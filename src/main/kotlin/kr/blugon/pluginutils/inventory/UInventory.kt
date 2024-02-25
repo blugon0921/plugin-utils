@@ -1,4 +1,4 @@
-package kr.blugon.pluginplus.inventory
+package kr.blugon.pluginutils.inventory
 
 import net.kyori.adventure.text.Component
 import org.bukkit.Bukkit

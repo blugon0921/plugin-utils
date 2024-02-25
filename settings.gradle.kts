@@ -1,1 +1,1 @@
-rootProject.name = "pluginPlus"
+rootProject.name = "plugin-utils"

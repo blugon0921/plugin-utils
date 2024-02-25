@@ -1,4 +1,4 @@
-package kr.blugon.pluginplus.inventory
+package kr.blugon.pluginutils.inventory
 
 import org.bukkit.Material
 import org.bukkit.inventory.Inventory

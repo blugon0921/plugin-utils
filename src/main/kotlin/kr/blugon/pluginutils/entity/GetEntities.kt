@@ -1,4 +1,4 @@
-package kr.blugon.pluginplus.entity
+package kr.blugon.pluginutils.entity
 
 import org.bukkit.Bukkit
 import org.bukkit.World.Environment

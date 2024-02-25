@@ -1,4 +1,4 @@
-package kr.blugon.pluginplus.particle
+package kr.blugon.pluginutils.particle
 
 import org.bukkit.Location
 import org.bukkit.Particle

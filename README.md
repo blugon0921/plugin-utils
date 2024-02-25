@@ -1,9 +1,9 @@
-# Plugin Plus
+# Plugin Utils
 
-[![PluginPlus](https://img.shields.io/badge/pluginPlus-1.1.2-blue.svg)]()
+[![PluginPlus](https://img.shields.io/badge/plus-1.2.0-blue.svg)]()
 <br><br>
 [![Java](https://img.shields.io/badge/Java-17-FF7700.svg?logo=java)]()
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-186FCC.svg?logo=kotlin)]()
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-186FCC.svg?logo=kotlin)]()
 [![PaperMC](https://img.shields.io/badge/PaperMC-1.20-222222.svg)]()
 
 
@@ -25,7 +25,7 @@
 <dependencies>
     <dependency>
         <groupId>kr.blugon</groupId>
-        <artifactId>pluginPlus</artifactId>
+        <artifactId>plugin-utils</artifactId>
         <version>VERSION</version>
     </dependency>
 </dependencies>
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'kr.blugon:pluginPlus:VERSION'
+    implementation 'kr.blugon:plugin-utils:VERSION'
 }
 ```
 
@@ -50,6 +50,6 @@ repositories {
 }
 
 dependencies {
-    implementation("kr.blugon:pluginPlus:VERSION")
+    implementation("kr.blugon:plugin-utils:VERSION")
 }
 ```

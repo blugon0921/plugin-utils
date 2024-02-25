@@ -1,4 +1,4 @@
-package kr.blugon.pluginplus.etc
+package kr.blugon.pluginutils.etc
 
 import org.bukkit.Location
 import org.bukkit.entity.Player

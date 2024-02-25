@@ -1,4 +1,4 @@
-package kr.blugon.pluginplus.command
+package kr.blugon.pluginutils.command
 
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
