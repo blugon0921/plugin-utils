@@ -5,6 +5,8 @@ import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.Color
 import java.util.*
 
+
+@Deprecated("Separated into mini-color library")
 enum class MiniColor {
     BLACK,
     DARK_BLUE,
@@ -34,7 +36,6 @@ enum class MiniColor {
     companion object {
         val String.miniMessage: Component
             get() = MiniMessage.miniMessage().deserialize(this)
-
 
 
         fun of(r: Int, g: Int, b: Int): String = of(Color.fromRGB(r, g, b))
