@@ -1,21 +1,21 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
-    kotlin("jvm") version "1.9.22"
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    kotlin("jvm") version "2.0.0"
     id("org.jetbrains.dokka") version "1.5.0"
     `maven-publish`
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
 val repoUser = project.properties["repoUser"] as String
 val repoPassword = project.properties["repoPassword"] as String
 
-val mcVersion = "1.20.4"
-val kotlinVersion = kotlin.coreLibrariesVersion
+val mcVersion = "1.20.6"
 
 repositories {
     mavenCentral()
@@ -27,26 +27,14 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:${mcVersion}-R0.1-SNAPSHOT")
 }
 
-extra.apply {
-    set("ProjectName", project.name)
-    set("ProjectVersion", project.version)
-    set("KotlinVersion", kotlinVersion)
-    set("MinecraftVersion", mcVersion.split(".").subList(0, 2).joinToString("."))
-}
-
 tasks {
     javadoc {
         options.encoding = "UTF-8"
     }
 
     compileKotlin {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-
-    processResources {
-        filesMatching("*.yml") {
-            expand(project.properties)
-            expand(extra.properties)
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_21)
         }
     }
 
@@ -62,13 +50,6 @@ tasks {
     }
 
     jar {
-        archiveBaseName.set(project.name) //Project Name
-        archiveFileName.set("${project.name}-${project.version}.jar") //Build File Name
-        archiveVersion.set(project.version.toString()) //Version
-        from(sourceSets["main"].output)
-    }
-
-    shadowJar {
         archiveBaseName.set(project.name) //Project Name
         archiveFileName.set("${project.name}-${project.version}.jar") //Build File Name
         archiveVersion.set(project.version.toString()) //Version

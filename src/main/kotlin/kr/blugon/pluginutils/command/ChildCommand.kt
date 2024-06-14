@@ -28,11 +28,12 @@ override fun onTabComplete(sender: CommandSender, command: Command, label: Strin
 }
 */
 
-
+@Deprecated("Use brigadier")
 interface ChildCommand {
     val commandName: String
     var args: ArrayList<String>
 
     fun onCommand(): Boolean
 }
+@Deprecated("Use brigadier")
 class CommandData(val sender: CommandSender, val command: Command, val label: String, val args: Array<out String>)
