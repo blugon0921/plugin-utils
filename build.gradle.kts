@@ -15,7 +15,7 @@ java {
 val repoUser = project.properties["repoUser"] as String
 val repoPassword = project.properties["repoPassword"] as String
 
-val mcVersion = "1.20.6"
+val mcVersion = "1.21.1"
 
 repositories {
     mavenCentral()
