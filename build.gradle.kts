@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    kotlin("jvm") version "2.0.0"
+    kotlin("jvm") version "2.2.20"
     id("org.jetbrains.dokka") version "1.5.0"
     `maven-publish`
 }
@@ -15,11 +15,11 @@ java {
 val repoUser = project.properties["repoUser"] as String
 val repoPassword = project.properties["repoPassword"] as String
 
-val mcVersion = "1.21.1"
+val mcVersion = "1.21.8"
 
 repositories {
     mavenCentral()
-    maven("https://papermc.io/repo/repository/maven-public/")
+    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {

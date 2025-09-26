@@ -10,11 +10,11 @@ import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.ItemStack
 import org.bukkit.plugin.java.JavaPlugin
 
-class UInventory(val plugin: JavaPlugin, val size: Int, title: Component) {
+class UInventory(val plugin: JavaPlugin, val size: Int, title: Component): Listener {
     var inventory = Bukkit.createInventory(null, size, title)
     val slots = MutableList<USlot?>(size) { null }
-    var isSetOpen = false
-    var isSetClose = false
+    private var isSetOpen = false
+    private var isSetClose = false
 //    var isSetDrag = false
 
     companion object {
@@ -28,6 +28,7 @@ class UInventory(val plugin: JavaPlugin, val size: Int, title: Component) {
             this.openInventory(uInventory.inventory)
         }
     }
+
 
     fun onOpen(openEvent: (InventoryOpenEvent) -> Unit) {
         if(isSetOpen) throw Exception("Already set open event")
@@ -61,6 +62,12 @@ class UInventory(val plugin: JavaPlugin, val size: Int, title: Component) {
         inventory.setItem(index, item)
     }
 
+    fun inventorySlot(index: Int, clickEvent: (InventoryClickEvent) -> Unit) {
+        val uInventorySlot = UInventorySlot(index, inventory, clickEvent)
+        Bukkit.getPluginManager().registerEvents(uInventorySlot, plugin)
+    }
+
+
 
     class UOpen(val uInventory: UInventory, val openEvent: InventoryOpenEvent.() -> Unit): Listener {
         @EventHandler
@@ -91,7 +98,17 @@ class UInventory(val plugin: JavaPlugin, val size: Int, title: Component) {
         fun click(event: InventoryClickEvent) {
             if(event.inventory != inventory) return
             event.isCancelled = true
-            if(event.clickedInventory?.type == InventoryType.PLAYER) return
+            if(event.slot != slot) return
+            clickEvent(event)
+        }
+    }
+
+    class UInventorySlot(val slot: Int, val inventory: Inventory, val clickEvent: InventoryClickEvent.() -> Unit): Listener {
+        @EventHandler
+        fun click(event: InventoryClickEvent) {
+            if(event.view.topInventory != inventory) return
+            event.isCancelled = true
+            if(event.clickedInventory?.type != InventoryType.PLAYER) return
             if(event.slot != slot) return
             clickEvent(event)
         }

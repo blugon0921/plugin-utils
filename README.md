@@ -1,9 +1,9 @@
 # Plugin Utils
 
-[![PluginPlus](https://img.shields.io/badge/plus-1.2.4-blue.svg)]()
+[![PluginPlus](https://img.shields.io/badge/plus-1.3.1-blue.svg)]()
 <br><br>
 [![Java](https://img.shields.io/badge/Java-21-FF7700.svg?logo=java)]()
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-186FCC.svg?logo=kotlin)]()
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.2.20-186FCC.svg?logo=kotlin)]()
 [![PaperMC](https://img.shields.io/badge/PaperMC-222222.svg)]()
 
 
